@@ -1,0 +1,177 @@
+Administrator@PC-201504041945 MINGW64 /d/Program_Learning/git/gitdemo/demo2 (master)
+$ ll
+total 1
+-rw-r--r-- 1 Administrator 197121 10 ÁùÔÂ   23 22:49 test.txt
+
+Administrator@PC-201504041945 MINGW64 /d/Program_Learning/git/gitdemo/demo2 (master)
+$ git status
+On branch master
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+
+        bash_demo.txt
+
+nothing added to commit but untracked files present (use "git add" to track)
+
+Administrator@PC-201504041945 MINGW64 /d/Program_Learning/git/gitdemo/demo2 (master)
+$ git add bash_demo.txt
+
+Administrator@PC-201504041945 MINGW64 /d/Program_Learning/git/gitdemo/demo2 (master)
+$ git status
+On branch master
+Changes to be committed:
+  (use "git reset HEAD <file>..." to unstage)
+
+        new file:   bash_demo.txt
+
+
+Administrator@PC-201504041945 MINGW64 /d/Program_Learning/git/gitdemo/demo2 (master)
+$ git commit -m "bash first commit"
+[master 5626013] bash first commit
+ 1 file changed, 1 insertion(+)
+ create mode 100644 bash_demo.txt
+
+Administrator@PC-201504041945 MINGW64 /d/Program_Learning/git/gitdemo/demo2 (master)
+$ git status
+On branch master
+nothing to commit, working tree clean
+
+Administrator@PC-201504041945 MINGW64 /d/Program_Learning/git/gitdemo/demo2 (master)
+$ git status
+On branch master
+Changes not staged for commit:
+  (use "git add <file>..." to update what will be committed)
+  (use "git checkout -- <file>..." to discard changes in working directory)
+
+        modified:   bash_demo.txt
+
+no changes added to commit (use "git add" and/or "git commit -a")
+
+Administrator@PC-201504041945 MINGW64 /d/Program_Learning/git/gitdemo/demo2 (master)
+$ git add bash_demo.txt
+
+Administrator@PC-201504041945 MINGW64 /d/Program_Learning/git/gitdemo/demo2 (master)
+$ git status
+On branch master
+Changes to be committed:
+  (use "git reset HEAD <file>..." to unstage)
+
+        modified:   bash_demo.txt
+
+
+Administrator@PC-201504041945 MINGW64 /d/Program_Learning/git/gitdemo/demo2 (master)
+$ git reset HEAD bash_demo.txt
+Unstaged changes after reset:
+M       bash_demo.txt
+
+Administrator@PC-201504041945 MINGW64 /d/Program_Learning/git/gitdemo/demo2 (master)
+$ git status
+On branch master
+Changes not staged for commit:
+  (use "git add <file>..." to update what will be committed)
+  (use "git checkout -- <file>..." to discard changes in working directory)
+
+        modified:   bash_demo.txt
+
+no changes added to commit (use "git add" and/or "git commit -a")
+
+Administrator@PC-201504041945 MINGW64 /d/Program_Learning/git/gitdemo/demo2 (master)
+$ git checkout -- bash_demo.txt
+
+Administrator@PC-201504041945 MINGW64 /d/Program_Learning/git/gitdemo/demo2 (master)
+$ git status
+On branch master
+nothing to commit, working tree clean
+
+Administrator@PC-201504041945 MINGW64 /d/Program_Learning/git/gitdemo/demo2 (master)
+$ git status
+On branch master
+Changes not staged for commit:
+  (use "git add <file>..." to update what will be committed)
+  (use "git checkout -- <file>..." to discard changes in working directory)
+
+        modified:   bash_demo.txt
+
+no changes added to commit (use "git add" and/or "git commit -a")
+
+Administrator@PC-201504041945 MINGW64 /d/Program_Learning/git/gitdemo/demo2 (master)
+$ git add bash_demo.txt
+
+Administrator@PC-201504041945 MINGW64 /d/Program_Learning/git/gitdemo/demo2 (master)
+$ git commit -m "second commit"
+[master 965ee8b] second commit
+ 1 file changed, 2 insertions(+), 1 deletion(-)
+
+Administrator@PC-201504041945 MINGW64 /d/Program_Learning/git/gitdemo/demo2 (master)
+$ git log
+commit 965ee8b48db2ba693122e2932b8c558cc7696da1 (HEAD -> master)
+Author: my5626018 <my5626018@163.com>
+Date:   Sun Jun 23 23:13:01 2019 +0800
+
+    second commit
+
+commit 5626013cc8c0290b70eea7cf7f9ad033ee105767
+Author: my5626018 <my5626018@163.com>
+Date:   Sun Jun 23 23:07:12 2019 +0800
+
+    bash first commit
+
+commit 7bc923d5f8e112125b7ec247d95f299275faa3ef
+Author: my5626018 <my5626018@163.com>
+Date:   Sun Jun 23 23:03:32 2019 +0800
+
+    delete gui_demo
+
+commit 13a5ca97f32127a074ca2c8665f73b859b740d9d
+Author: my5626018 <my5626018@163.com>
+Date:   Sun Jun 23 22:55:55 2019 +0800
+
+    first commit
+
+commit 701a6bbd21c5a8304942a4dc3b04f40224426f01
+Author: my5626018 <my5626018@163.com>
+Date:   Sun Jun 23 22:50:43 2019 +0800
+
+    repo2 first commit
+
+Administrator@PC-201504041945 MINGW64 /d/Program_Learning/git/gitdemo/demo2 (master)
+$ git reset --hard 5626013cc8c0290b70eea7cf7f9ad033ee105767
+HEAD is now at 5626013 bash first commit
+
+Administrator@PC-201504041945 MINGW64 /d/Program_Learning/git/gitdemo/demo2 (master)
+$ git status
+On branch master
+nothing to commit, working tree clean
+
+Administrator@PC-201504041945 MINGW64 /d/Program_Learning/git/gitdemo/demo2 (master)
+$ ll
+total 2
+-rw-r--r-- 1 Administrator 197121 31 ÁùÔÂ   23 23:15 bash_demo.txt
+-rw-r--r-- 1 Administrator 197121 10 ÁùÔÂ   23 22:49 test.txt
+
+Administrator@PC-201504041945 MINGW64 /d/Program_Learning/git/gitdemo/demo2 (master)
+$ git rm bash_demo.txt
+rm 'bash_demo.txt'
+
+Administrator@PC-201504041945 MINGW64 /d/Program_Learning/git/gitdemo/demo2 (master)
+$ git status
+On branch master
+Changes to be committed:
+  (use "git reset HEAD <file>..." to unstage)
+
+        deleted:    bash_demo.txt
+
+
+Administrator@PC-201504041945 MINGW64 /d/Program_Learning/git/gitdemo/demo2 (master)
+$ git commit -m "delete bash_demo.txt"
+[master f71700d] delete bash_demo.txt
+ 1 file changed, 1 deletion(-)
+ delete mode 100644 bash_demo.txt
+
+Administrator@PC-201504041945 MINGW64 /d/Program_Learning/git/gitdemo/demo2 (master)
+$ git status
+On branch master
+nothing to commit, working tree clean
+
+Administrator@PC-201504041945 MINGW64 /d/Program_Learning/git/gitdemo/demo2 (master)
+$
